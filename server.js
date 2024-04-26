@@ -63,7 +63,9 @@ app.post('/login', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
+app.get('/',(req,res)=>{
+  res.status(200).json({message:'Welcome to the login and signup API'})
+})
 app.post('/signup', async (req, res) => {
   try{
       await connect();
