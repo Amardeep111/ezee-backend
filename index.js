@@ -38,9 +38,10 @@ const connect = async () => {
       console.log(error);
   }
 }
+connect();
 app.post('/login', async (req, res) => {
   try {
-    await connect();
+    // await connect();
     const { email, password } = req.body;
     // console.log('Received email:', email);
     // console.log('Received password:', password);
@@ -68,7 +69,7 @@ app.get('/',(req,res)=>{
 })
 app.post('/signup', async (req, res) => {
   try{
-      await connect();
+      // await connect();
       const {fullname,email,password}=req.body;
       const user=await collection.findOne({email:email});
       if(user){
